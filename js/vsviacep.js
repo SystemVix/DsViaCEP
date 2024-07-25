@@ -4,4 +4,3 @@ import * as listController from "./controllers/list-controller.js";
 formController.init();
 listController.init();
 
-//console.log("oi");

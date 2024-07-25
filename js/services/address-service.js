@@ -8,3 +8,21 @@ export async function findByCep(cep)
    const address = new Address(result.cep, result.logradouro, null, result.localidade);
    return address;
 }
+
+export function getErrors(address)
+{
+   const errors = {};
+
+   // !address.cep significa: se não for indefinido
+   if (!address.cep || address.cep == "")
+   {
+      errors.cep = "Campo requerido!";
+   }
+
+   if (!address.number || address.number == "")
+   {
+      errors.number = "Campo requerido!";
+   }
+
+   return errors;
+}
